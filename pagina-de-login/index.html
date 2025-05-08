@@ -7,14 +7,30 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="login-container">
-      <img src="logoL.png" alt="Logo do site" class="logo" />
-      <h2>Login</h2>
-      <form id="loginForm">
-        <input type="email" placeholder="Email" id="email" required />
-        <input type="password" placeholder="Senha" id="senha" required />
-        <button type="submit">Entrar</button>
-      </form>
-    </div>
-  </body>  
+  <div class="login-container">
+    <img src="logoL.png" alt="Logo do site" class="logo" />
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" placeholder="Email" id="email" required />
+      <input type="password" placeholder="Senha" id="senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      if (email && senha) {
+        window.location.href = 'formulario.html';
+      } else {
+        alert('Preencha todos os campos!');
+      }
+    });
+  </script>
+</body>
 </html>
